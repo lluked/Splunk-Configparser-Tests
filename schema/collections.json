@@ -1,11 +1,20 @@
 {
     "type": "object",
     "properties": {
-        "__name__" : {"type": "string"},
-        "enforceTypes" : {"type": "string", "enum": ["true", "false"]}
+        "__name__" : {
+            "type": "string",
+            "pattern": "^lookup_collection_(?:.*?)$",
+            "maxLength": 25
+        },
+        "enforceTypes" : {
+            "type": "string", "enum": ["true", "false"]
+        }
     },
     "patternProperties": {
-        "^field\\..*$": {"type": "string", "enum": ["number", "bool", "string", "time"]}
+        "^field\\.(?:.*?)$": {
+            "type": "string",
+            "enum": ["number", "bool", "string", "time"]
+        }
     },
     "required": [
         "enforceTypes"
