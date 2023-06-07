@@ -3,7 +3,6 @@
     "properties": {
         "__name__" : {
             "type": "string",
-            "pattern": "^lookup_(?:static|collection)_(?:.*?)$",
             "maxLength": 50
         },
         "filename" : {
@@ -22,15 +21,22 @@
     "dependentSchemas": {
         "collection": {
             "required": ["fields_list"],
-            "not": {"required": ["filename"]}
+            "not": {"required": ["filename"]},
+            "properties": {
+                "__name__" : {
+                    "pattern": "^lookup_collection_(?:.*?)$"
+                }
+            }
         },
         "fields_list": {
-            "required": ["collection"],
-            "not": {
-                "required": ["filename"]
-                }
+            "required": ["collection"]
             },
         "filename": {
+            "properties": {
+                "__name__" : {
+                    "pattern": "^lookup_static_(?:.*?)$"
+                }
+            },
             "not": {
                 "required": ["fields_list"]
             }
