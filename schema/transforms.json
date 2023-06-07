@@ -11,8 +11,7 @@
             "maxLength": 54
         },
         "collection" : {
-            "type": "string",
-            "pattern": "^lookup_collection_(?:.*?)$"
+            "type": "string"
         },
         "fields_list" : {
             "type": "string"

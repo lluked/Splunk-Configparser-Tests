@@ -4,7 +4,7 @@
         "__name__" : {
             "type": "string",
             "pattern": "^lookup_collection_(?:.*?)$",
-            "maxLength": 25
+            "maxLength": 50
         },
         "enforceTypes" : {
             "type": "string", "enum": ["true", "false"]
