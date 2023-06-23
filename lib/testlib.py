@@ -1,12 +1,9 @@
-from __future__ import annotations
 
 import argparse
 import os
 import unittest
-
 import addonfactory_splunk_conf_parser_lib as SplunkConfigParser
 import yaml
-
 
 def parseArgs():
     parser = argparse.ArgumentParser()
@@ -15,15 +12,12 @@ def parseArgs():
     app_path = args.app_path[0]
     return app_path
 
-
 def loadSplunkConfig(config_file):
     config = SplunkConfigParser.TABConfigParser()
     config.read(config_file)
     return config
 
 # Custom unittest class for splunk configs
-
-
 class SplunkConfTestCase(unittest.TestCase):
 
     @classmethod
