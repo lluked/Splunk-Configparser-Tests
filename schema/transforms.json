@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "__name__" : {
+            "type": "string",
+            "maxLength": 50
+        },
+        "filename" : {
+            "type": "string",
+            "pattern": "^lookup_static_(?:.*?)\\.csv$",
+            "maxLength": 54
+        },
+        "collection" : {
+            "type": "string"
+        },
+        "fields_list" : {
+            "type": "string"
+        }
+    },
+    "dependentSchemas": {
+        "collection": {
+            "required": ["fields_list"],
+            "not": {"required": ["filename"]},
+            "properties": {
+                "__name__" : {
+                    "pattern": "^lookup_collection_(?:.*?)$"
+                }
+            }
+        },
+        "fields_list": {
+            "required": ["collection"]
+            },
+        "filename": {
+            "properties": {
+                "__name__" : {
+                    "pattern": "^lookup_static_(?:.*?)$"
+                }
+            },
+            "not": {
+                "required": ["fields_list"]
+            }
+        }
+    },
+    "additionalProperties": false
+}

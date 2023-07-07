@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "__name__" : {
+            "type": "string",
+            "pattern": "^lookup_collection_(?:.*?)$",
+            "maxLength": 50
+        },
+        "enforceTypes" : {
+            "type": "string", "enum": ["true", "false"]
+        }
+    },
+    "patternProperties": {
+        "^field\\.(?:.*?)$": {
+            "type": "string",
+            "enum": ["number", "bool", "string", "time"]
+        }
+    },
+    "required": [
+        "enforceTypes"
+    ],
+    "additionalProperties": false
+}
