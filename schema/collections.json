@@ -8,6 +8,9 @@
         },
         "enforceTypes" : {
             "type": "string", "enum": ["true", "false"]
+        },
+        "replicate" : {
+            "type": "string", "enum": ["true", "false"]
         }
     },
     "patternProperties": {

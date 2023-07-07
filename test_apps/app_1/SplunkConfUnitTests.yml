@@ -1,0 +1,3 @@
+default:
+- collections.conf
+- transforms.conf

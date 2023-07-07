@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 import unittest
+import os
 
 loader = unittest.TestLoader()
 
-test_suite = loader.discover(start_dir='tests', pattern='*.py')
+tests_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tests')
+
+test_suite = loader.discover(start_dir=tests_path, pattern='*.py')
 
 all_tests = unittest.TestSuite(test_suite)
 

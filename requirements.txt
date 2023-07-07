@@ -1,2 +1,3 @@
 addonfactory-splunk-conf-parser-lib
+jsonschema
 pyyaml
