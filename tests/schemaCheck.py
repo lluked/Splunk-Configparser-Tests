@@ -23,7 +23,7 @@ class schemaTestCase(testlib.SplunkConfTestCase):
                 ## Load actual config_item and process
                 config_item = self.configs[config_type][config]
                 # print(config_item)
-                with open('schema/{}.json'.format(config.split('.')[0])) as schema_file:
+                with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'schema/{}.json').format(config.split('.')[0])) as schema_file:
                     config_schema = json.load(schema_file)
                     # print(json.dumps(schema, indent=4))
                     for section in config_item:
