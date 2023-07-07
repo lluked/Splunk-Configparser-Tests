@@ -1,0 +1,6 @@
+default:
+- collections.conf
+- transforms.conf
+local:
+- collections.conf
+- transforms.conf
